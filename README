@@ -7,17 +7,20 @@ Screenshots: http://imgur.com/a/D4qTz
 
 Now, for some questions:
 
-- Why isn't this on the offical App Store? You're going to steal all my damn money aren't you?
+- Why isn't this on the official App Store? You're going to steal all my damn money aren't you?
 Nope. The reason is simple: it costs $99 to join the Apple developer program, to be able to have the privilege to submit your app for approval, and I'm an unemployed recent grad who doesn't have a spare $99.
-If you're worried about it siphoning off your login information and saving it somewhere, or sending it somewhere, take a gander through the source or run a network sniffer while using the app, you'll see it only ever vists the Tradehill API. Also, it doesn't run in the background, so once you hit the home button, relaunching the app puts you back at a login screen.
+If you're worried about it siphoning off your login information and saving it somewhere, or sending it somewhere, take a gander through the source or run a network sniffer while using the app, you'll see it only ever visits the Tradehill API. Also, it doesn't run in the background, so once you hit the home button, relaunching the app puts you back at a login screen.
 
 - How do I get this on my phone?
-First off, you must have a JAILBROKEN iPhone. If yours isn't, but you want it to be, it's a fairly simple process, and utilizing your favorite search engine with surely yield positive results. Next, you can download the source, compile and install, if you're familiar with that process. The more efficient way, would be to download the .app and transfer it to your phone. As of writing, it isn't available on any Cydia respository, but I plan on making that happen in the next few days.
+First off, you must have a JAILBROKEN iPhone. If yours isn't, but you want it to be, it's a fairly simple process, and utilizing your favorite search engine with surely yield positive results. Next, you can download the source, compile and install, if you're familiar with that process. The more efficient way, would be to download the .app and transfer it to your phone. As of writing, it isn't available on any Cydia repository, but I plan on making that happen in the next few days.
+
+- I transferred it to my phone, and I restarted the springboard, but it crashes as soon as I click the icon. Wtf?
+Make sure you chmod /Applications/BitcoinTrader.app/BitcoinTrader to 755. You can do that through SFTP or SSH.
 
 - What's it do?
 Once you login you have the option to place/cancel an order to buy/sell BTC in any supported currency. There's also full ticker information and all the data is easily refreshable to keep you up to date.
 
-- When I select an order from the list, and confirm I want to cancel it, it doesn't diseappear from the list. What the hell, man?
+- When I select an order from the list, and confirm I want to cancel it, it doesn't disappear from the list. What the hell, man?
 The Tradehill API only offers one "type" when returning a list of orders, and when you send a cancellation request it can take up to five seconds to be executed on the exchange, therefore the order list that is returned to the client when you cancel an order will still have that order listed as "type" active. Refresh after a few seconds and it should be gone.
 
 - Can I help?
