@@ -12,7 +12,7 @@
 //  the Free Software Foundation, either version 3 of the License, or
 //  (at your option) any later version.
 //
-//  Foobar is distributed in the hope that it will be useful,
+//  BitcoinTrader is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //  GNU General Public License for more details.
@@ -125,8 +125,16 @@
     [super dealloc];
 }
 
-- (IBAction) login: (id) sender
-{
+- (IBAction) about: (id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About" message:@"BitcoinTrader for iPhone\nCopyright 2011 Tyler Richey\nAll Rights Reserved\n\nLicense: GNU GPLv3" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    
+}
+
+- (IBAction) login: (id) sender {
+
 	loginStatus.hidden = TRUE;
 	loginIndicator.hidden = TRUE;
     [usernameField resignFirstResponder];
