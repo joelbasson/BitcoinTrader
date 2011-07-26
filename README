@@ -3,6 +3,7 @@ Copyright 2011 Tyler Richey. All rights reserved.
 
 This is a simple application for logging in to an exchange (currently only Tradehill supported, but planning on expanding the selection soon) and buying and selling bitcoins.
 
+NOW AVAILABLE ON CYDIA (BigBoss repo)
 Screenshots: http://imgur.com/a/D4qTz
 
 Now, for some questions:
@@ -12,10 +13,14 @@ Nope. The reason is simple: it costs $99 to join the Apple developer program, to
 If you're worried about it siphoning off your login information and saving it somewhere, or sending it somewhere, take a gander through the source or run a network sniffer while using the app, you'll see it only ever visits the Tradehill API. Also, it doesn't run in the background, so once you hit the home button, relaunching the app puts you back at a login screen.
 
 - How do I get this on my phone?
-First off, you must have a JAILBROKEN iPhone. If yours isn't, but you want it to be, it's a fairly simple process, and utilizing your favorite search engine with surely yield positive results. Next, you can download the source, compile and install, if you're familiar with that process. The more efficient way, would be to download the .app and transfer it to your phone. As of writing, it isn't available on any Cydia repository, but I plan on making that happen in the next few days.
+NOW AVAILABLE ON CYDIA (BigBoss repo)
+First off, you must have a JAILBROKEN iPhone. If yours isn't, but you want it to be, it's a fairly simple process, and utilizing your favorite search engine with surely yield positive results. If you don't want to use the version Cydia, then, next, you can download the source, compile and install, if you're familiar with that process. There's also a precompiled .app available in the downloads if you'd rather transfer it yourself.
 
 - I transferred it to my phone, and I restarted the springboard, but it crashes as soon as I click the icon. Wtf?
 Make sure you chmod /Applications/BitcoinTrader.app/BitcoinTrader to 755. You can do that through SFTP or SSH.
+
+- I know my username and password are correct, but it keeps saying I can't login. You suck.
+That's not really a question, but, before you can use the app, make sure you have logged in to the Tradehill website and allowed API access (user profile).
 
 - What's it do?
 Once you login you have the option to place/cancel an order to buy/sell BTC in any supported currency. There's also full ticker information and all the data is easily refreshable to keep you up to date.
