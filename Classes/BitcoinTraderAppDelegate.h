@@ -22,19 +22,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class LoginViewController;
-@class OrderViewController;
-
 @interface BitcoinTraderAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-	LoginViewController *loginViewController;
-	OrderViewController *OrderViewController;
     UINavigationController *navCon;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) LoginViewController *loginViewController;
-@property (nonatomic, retain) OrderViewController *OrderViewController;
 @property (nonatomic, retain) UINavigationController *navCon;
 
 @end

@@ -20,4 +20,10 @@
 //  You should have received a copy of the GNU General Public License
 //  along with BitcoinTrader.  If not, see <http://www.gnu.org/licenses/>.
 
-NSString * const apiURL = @"https://api.tradehill.com/APIv1/";
+NSString * const thURL = @"https://api.tradehill.com/APIv1/";
+//th test
+//NSString * const thURL = @"https://api-test.tradehill.com/APIv1/";
+NSString * const exchbURL = @"https://www.exchangebitcoins.com/data";
+NSString * const bxURL = @"https://CampBX.com/api";
+NSString * const goxURL = @"https://mtgox.com/api/0";
+NSString * const instaURL = @"https://www.instawallet.org/api/v1";

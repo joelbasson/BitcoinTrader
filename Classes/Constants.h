@@ -20,5 +20,8 @@
 //  You should have received a copy of the GNU General Public License
 //  along with BitcoinTrader.  If not, see <http://www.gnu.org/licenses/>.
 
-extern NSString * const apiURL;
-
+extern NSString * const thURL;
+extern NSString * const exchbURL;
+extern NSString * const bxURL;
+extern NSString * const goxURL;
+extern NSString * const instaURL;

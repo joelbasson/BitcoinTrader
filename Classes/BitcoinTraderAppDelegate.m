@@ -22,14 +22,10 @@
 
 
 #import "BitcoinTraderAppDelegate.h"
-#import "LoginViewController.h"
-#import "OrderViewController.h"
 
 @implementation BitcoinTraderAppDelegate
 
 @synthesize window;
-@synthesize loginViewController;
-@synthesize OrderViewController;
 @synthesize navCon;
 
 #pragma mark -
@@ -43,7 +39,7 @@
 	self.loginViewController = _loginViewController;
 	[_loginViewController release];
 	[self.window addSubview:[loginViewController view]];*/
-    
+        
     [self.window addSubview:[navCon view]];
     
     [self.window makeKeyAndVisible];
@@ -100,13 +96,9 @@
 
 
 - (void)dealloc {
-	[loginViewController release];
     [window release];
     [super dealloc];
 }
 
-- (void) gotoOrders {
-    [self.window addSubview:loginViewController.view];
-}
 
 @end
