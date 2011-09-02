@@ -23,7 +23,7 @@
 
 #import "ExchbViewController.h"
 #import "connectTag.h"
-#import "JSON/SBJson.h"
+#import "SBJson.h"
 #import "Constants.h"
 #import "QRCodeReader.h"
 
