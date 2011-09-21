@@ -659,10 +659,12 @@
 
 - (IBAction)payBtc:(id)sender {
     
-    if ([[spendBtc text] length] == 0)
+    [spendBtc resignFirstResponder];
+    
+    /*if ([[spendBtc text] length] == 0)
     {
         //nothing
-    } else {
+    } else {*/
         
         ZXingWidgetController *widCon = [[ZXingWidgetController alloc] initWithDelegate:self showCancel:YES OneDMode:NO];
         QRCodeReader *qrCode = [[QRCodeReader alloc] init];
@@ -673,17 +675,32 @@
         [self presentModalViewController:widCon animated:YES];
         [widCon release];
         
-    }
+    //}
     
 }
 
 - (void)zxingController:(ZXingWidgetController*)controller didScanResult:(NSString *)result {
     
-    [self setSendBtc:[result substringFromIndex:8]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm Payment" message:[NSString stringWithFormat:@"Pay %@ BTC to\n%@?", [spendBtc text], sendBtc] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Pay", nil];
-    [alert setTag:5];
-    [alert show];
-    [alert release];
+    NSArray *payComponents = [[NSArray alloc] initWithArray:[result componentsSeparatedByString:@":"]];
+    NSString *amount, *btcAddress;
+    NSArray *amountComp = [[payComponents objectAtIndex:1] componentsSeparatedByString:@"?"];
+    if ([amountComp count] > 1) {
+        btcAddress = [amountComp objectAtIndex:0];
+        NSArray *amountAgain = [[amountComp objectAtIndex:1] componentsSeparatedByString:@"="];
+        amount = [amountAgain objectAtIndex:1];
+        [spendBtc setText:amount];
+    } else {
+        btcAddress = [payComponents objectAtIndex:1];
+    }
+    [self setSendBtc:btcAddress];
+    [payComponents release];
+    
+    if ([[spendBtc text] length] > 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm Payment" message:[NSString stringWithFormat:@"Pay %@ BTC to\n%@?", [spendBtc text], sendBtc] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Pay", nil];
+        [alert setTag:2];
+        [alert show];
+        [alert release];
+    }
     
     [self dismissModalViewControllerAnimated:NO];
 }
